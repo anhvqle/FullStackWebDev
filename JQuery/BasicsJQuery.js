@@ -1,40 +1,40 @@
-// var x = $('h1');
-// // You can easily edit the css properties:
-// x.css("color",'red');
-// x.css("background","blue");
-// // Multiple CSS properties at once:
-// var newCSS = {
-//   "color":"white",
-//   "background":"blue",
-//   "border":"5px solid red"
-// }
-// x.css(newCSS);
-//
-// // Grabbing multiple returns an array-like object:
-// var listItems = $('li');
-// listItems.css("color",'red');
-// listItems.eq(0).css('color','blue');
-// listItems.eq(1).css('color','purple');
-//
-// // Changing Text:
-// $('h1').text("Brand New Text!")
-// // Changing HTML
-// $('h1').html("<em>Now in Italics</em>")
-// // Changing an attribute
-// $("input").eq(1).attr('type','checkbox');
-// // Changing values
-// $("input").eq(0).val("Enter Something Else");
-// // Add a Class
-// $('h2').addClass("turnRed")
-// // Remove a Class
-// $("h2").removeClass("turnRed");
-// // Toggle the Class on and Off
-// $("h3").toggleClass("turnBlue");
-//
-// jQuery makes it easy to interact with the DOM!
+var x = $('h1');
+// You can easily edit the css properties:
+x.css("color",'red');
+x.css("background","blue");
+// Multiple CSS properties at once:
+var newCSS = {
+  "color":"white",
+  "background":"blue",
+  "border":"5px solid red"
+}
+x.css(newCSS);
 
-// List of all possible events!
-// https://api.jquery.com/category/events/
+// Grabbing multiple returns an array-like object:
+var listItems = $('li');
+listItems.css("color",'red');
+listItems.eq(0).css('color','blue');
+listItems.eq(1).css('color','purple');
+
+// Changing Text:
+$('h1').text("Brand New Text!")
+// Changing HTML
+$('h1').html("<em>Now in Italics</em>")
+// Changing an attribute
+$("input").eq(1).attr('type','checkbox');
+// Changing values
+$("input").eq(0).val("Enter Something Else");
+// Add a Class
+$('h2').addClass("turnRed")
+// Remove a Class
+$("h2").removeClass("turnRed");
+// Toggle the Class on and Off
+$("h3").toggleClass("turnBlue");
+
+jQuery makes it easy to interact with the DOM!
+
+List of all possible events!
+https://api.jquery.com/category/events/
 
 //////////////
 // CLICKS ///
