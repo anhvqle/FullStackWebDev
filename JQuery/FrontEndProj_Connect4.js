@@ -17,7 +17,7 @@ $('.board button').on('click', function() {
   var row = getBottomRow(col);
   changeColor(row, col, currColor);
 
-  if(lineCheck()){
+  if(lineCheck() || diagonalWin()){
     endGame(currName);
   }
 
@@ -27,13 +27,11 @@ $('.board button').on('click', function() {
     currName = player1;
     $('h3').text(player1 + ": it is your turn, please pick a column to drop your blue chip.");
     currColor = player1Color;
-    console.log(currName);
   }
   else{
     currName = player2;
     $('h3').text(player2 + ": it is your turn, please pick a column to drop your red chip.");
     currColor = player2Color;
-    console.log(currName);
   }
 })
 
@@ -76,9 +74,20 @@ function lineCheck(){
   }
 }
 
+//Check for diagonal win
+function diagonalWin(){
+  return false;
+}
+
 //return effects and changes when detect a winner
 function endGame(playerName) {
   $('h3').fadeOut('fast');
   $('h2').fadeOut('fast');
-  $('h1').text(playerName + " has won! Refresh your page to play again!").css('color', 'orange');
+  $('h1').text(playerName + " has won! Refresh your page to play again!").css(newCSS);
+}
+
+//Change the text after a winner is detected
+var newCSS = {
+  'color' : 'DarkGoldenRod',
+  'fontSize' : '50px'
 }
