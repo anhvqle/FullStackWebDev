@@ -76,7 +76,14 @@ function lineCheck(){
 
 //Check for diagonal win
 function diagonalWin(){
-  return false;
+  for(var row = 0; row < table.length; row++){
+    for(var col = 0; col < table.length; col++){
+      if(sameColor(getCurrentColor(row, col), getCurrentColor(row+1, col+1), getCurrentColor(row+2, col+2), getCurrentColor(row+3, col+3)) ||
+          sameColor(getCurrentColor(row, col), getCurrentColor(row-1, col+1), getCurrentColor(row-2, col+2), getCurrentColor(row-3, col+3))) {
+        return true;
+      }
+    }
+  }
 }
 
 //return effects and changes when detect a winner
