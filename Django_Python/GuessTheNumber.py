@@ -15,20 +15,20 @@ print(code)
 count = 0
 
 while True:
+    clues = []
     guess = [int(x) for x in str(input("What is your guess? "))]
     count += 1
     if(guess == code):
-        print("You guessed the number in", count, "tries")
+        print("Correct! You guessed the number in", count, "tries")
         break
-    noMatch = True
-    for i in range(len(guess)):
+    for i in range(0, len(guess)):
         if(guess[i] == code[i]):
-            print("MATCH")
-            noMatch = False
-            break
-    for i in guess:
-        if i in code:
-            print("CLOSE")
-            break
-    if(noMatch == True):
+            clues.append("MATCH")
+        elif(guess[i] in code):
+            clues.append("CLOSE")
+
+    if(clues == []):
         print("Nope")
+    else:
+        for clue in clues:
+            print(clue)
