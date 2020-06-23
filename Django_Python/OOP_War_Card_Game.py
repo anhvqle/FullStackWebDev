@@ -1,4 +1,4 @@
-# https://en.wikipedia.org/wiki/War_(card_game)
+# Rules: https://en.wikipedia.org/wiki/War_(card_game)
 
 from random import shuffle
 
@@ -8,39 +8,99 @@ RANKS = '2 3 4 5 6 7 8 9 10 J Q K A'.split()
 
 class Deck:
     """
-    This is the Deck Class. This object will create a deck of cards to initiate
-    play. You can then use this Deck list of cards to split in half and give to
-    the players. It will use SUITE and RANKS to create the deck. It should also
-    have a method for splitting/cutting the deck in half and Shuffling the deck.
+    This is the Deck Class.You can then use this Deck list of cards to split in
+    half and give to the players. It should also have a method for splitting/cutting
+    the deck in half and Shuffling the deck.
     """
     def __init__(self):
-        print("Creating A New Deck of Cards")
-        self.cards = [(s,r) for s in SUITE for r in RANKS ]
+        self.cards = [(r,s) for s in SUITE for r in RANKS ]
+
     def __str__(self):
         print(self.cards)
         return  ""
+
     def shuffle(self):
         shuffle(self.cards)
+
     def split(self):
         return (self.cards[:26], self.cards[26:])
 
 class Hand:
     '''
     This is the Hand class. Each player has a Hand, and can add or remove
-    cards from that hand. There should be an add and remove card method here.
+    cards from that hand.
     '''
-    pass
+    def __init__(self, cards):
+        self.cards = cards          #cards is a list of tuples
+
+    def add(self, card):
+        self.cards.insert(0, card)
+
+    def remove(self):
+        return self.cards.pop()
+
+    def __str__(self):
+        return "Contains {} cards".format(len(self.cards))
 
 class Player:
     """
     This is the Player class, which takes in a name and an instance of a Hand
     class object. The Payer can then play cards and check if they still have cards.
     """
-    pass
+    def __init__(self, name, Hand):
+        self.name = name
+        self.Hand = Hand
+
+    def play_card(self):
+        drawn_card = self.Hand.remove()
+        print("{} played: {}".format(self.name, drawn_card))
+        return drawn_card
+
+    def still_has_cards(self):
+        return len(self.Hand.cards) != 0
+
+    def __str__(self):
+        return self.name
+
 
 print("Welcome to War, let's begin...")
 deck = Deck()
 deck.shuffle()
 half1, half2 = deck.split()
-print(half1)
-print(half2)
+
+userName = input("What is your name? ")
+print()
+computer = Player("Computer", Hand(half1))          #Computer takes 1st half of the Deck
+user = Player(userName, Hand(half2))                #User takes 2nd half of the Deck
+i = 0
+while user.still_has_cards() and computer.still_has_cards() and i < 3:
+    print("Here are the current standings: ")
+    print(user.name+"'s count: "+str(len(user.Hand.cards)))
+    print(computer.name+"'s count: "+str(len(computer.Hand.cards)))
+    print()
+
+    print(computer.name, ":", half1, '\n')
+    print(user.name, ":",  half2, '\n')
+
+    print("Both players play a card!\n")
+
+    #Cards being played represented by a list
+    playedCards = []
+    userCard = user.play_card()
+    compCard = computer.play_card()
+    playedCards.append(userCard)
+    playedCards.append(compCard)
+
+    if(userCard[0] == compCard[0]):
+        print("There is a match. Time for War!")
+    else:
+        if(userCard[0] > compCard[0]):
+            print(user.name+" has the higher card, adding to hand.")
+            user.Hand.add(playedCards[0])
+            user.Hand.add(playedCards[1])
+        else:
+            print(computer.name+" has the higher card, adding to hand.")
+            computer.Hand.add(playedCards[0])
+            computer.Hand.add(playedCards[1])
+
+    i+=1
