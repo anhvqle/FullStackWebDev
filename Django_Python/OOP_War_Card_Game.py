@@ -93,12 +93,13 @@ while user.still_has_cards() and computer.still_has_cards() and i < 3:
 
     if(userCard[0] == compCard[0]):
         print("There is a match. Time for War!")
+        print("Each player removes 3 cards 'face down' and then one card face up")
+
     else:
         if(RANKS.index(userCard[0]) > RANKS.index(compCard[0])):
             print(user.name+" has the higher card, adding to hand.")
             user.Hand.add(card in playedCards)
         else:
             print(computer.name+" has the higher card, adding to hand.")
-            computer.Hand.add(playedCards[0])
-            computer.Hand.add(playedCards[1])
+            computer.Hand.add(card in playedCards)
     i+=1
