@@ -1,0 +1,88 @@
+header {
+    background-color: black;
+    color: white;
+    border-style: solid; text-align: center; font-size: 20;
+
+}
+main {
+    font-family: sans-serif,"Arial", "Verdana"; font-size: 15;
+}
+
+h1 {
+    margin-bottom:0px;
+}
+
+nav {
+    background-color:#eeee; border: solid #eeee; margin-top: 0px; padding: 3px
+}
+
+.nav_button {
+  color: grey; font-weight: bold; font-family: sans-serif, "Arial", "Verdana"; text-decoration: none;
+}
+
+.nav_button:hover {
+    color:blue;background-color: darkgrey;
+}
+
+.h3_index {
+    background-color: darkblue; color: white; font-weight: bold; border-style: solid; border-radius: 10px; padding: 5px;
+}
+
+footer{
+    background-color:black; color: white; border: solid; text-align: center;
+}
+ul{
+    margin: 8px;
+}
+ol{
+    margin: 8px;
+}
+q{
+    font-style: italic; font-size: 14px;
+}
+
+h4{
+    background-color: darkblue; color: white; font-weight: bold; border-style: solid; border-radius: 10px; padding: 5px;
+}
+h3 {
+    font-family: sans-serif, "Verdana", "Arial"; font-weight: bold;
+}
+
+.li_display {
+    background-color: #eeee; border: solid #eeee; margin: 10px; border-radius: 5px; padding: 5px; list-style-type: none;
+ }
+
+.li_logistic {
+    background-color: #eeee;
+    border: solid #eeee;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.li_logistic:hover {
+    background-color: darkgrey;
+    color: darkred;
+}
+
+a:hover{
+  color: firebrick;
+}
+
+a {
+  text-decoration: none;
+}
+
+.p_button {
+    border: solid black;
+    background-color: white;
+    padding: 3px; margin: 3px;
+    margin-bottom: 3px;
+    font-family: sans-serif, "Arial", "Verdana";
+}
+
+.p_button:hover {
+   color: red; background-color: darkgrey;
+}
