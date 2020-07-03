@@ -4,5 +4,4 @@ from second_app import views
 
 urlpatterns = [
     path('', views.help, name='help'),
-    # path('admin/', admin.site.urls),
 ]
