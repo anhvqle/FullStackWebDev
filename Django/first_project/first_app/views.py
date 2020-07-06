@@ -11,6 +11,6 @@ def index(request):
     # return render(request, 'first_app/index.html', context = my_dict)
 
 def index2(request):
-    return HttpResponse("<em>My First Project</em>")
-    # my_dict = {'insert_me':"My name is Anh Le. Nice to Meet You!"}
-    # return render(request, 'first_app/index.html', context = my_dict)
+    topic_list = Topic.objects.order_by('topic_name')
+    topic_dict = {'topics' : topic_list}
+    return render(request, 'first_app/second_page.html', context = topic_dict)

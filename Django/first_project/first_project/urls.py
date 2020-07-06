@@ -22,6 +22,6 @@ from first_app import views
 
 urlpatterns = [
     path('',views.index,name='index'),
-    path('first_page/', include('first_app.urls')),
+    path('topics/', include('first_app.urls')),
     path('admin/', admin.site.urls),
 ]
