@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from second_app.models import User
 
-def index(request):
-    return HttpResponse("<em>My Second Project</em>")
+def home(request):
+    return render(request, 'second_app/home.html')
 
-def help(request):
-    help_dict = {'help_insert':"HELP PAGE"}
-    return render(request, 'second_app/index2.html', context = help_dict)
+def userInfo(request):
+    user_list = User.objects.order_by('first_name')
+    user_dict = {'users_info' : user_list}
+    return render(request, 'second_app/user.html', context = user_dict)
 
 # Create your views here.
