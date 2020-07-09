@@ -3,27 +3,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>USER INFORMATION</title>
+    <title>SIGN UP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Here are your users: </h1>
-    <div>
-      {% if users_info %}
-        <ol>
-          {% for user in users_info %}
-            <li>User Info
-              <ul>
-                <li>First Name: {{ user.first_name }}</li>
-                <li>Last Name: {{ user.last_name }}</li>
-                <li>Email: {{ user.email }}</li>
-              </ul>
-            </li>
-          {% endfor %}
-        </ol>
-      {% else %}
-        <p>NO USER INFORMATION FOUND!</p>
-
-      {% endif %}
+    <div class="container">
+      <h1>Please Sign Up Here</h1>
+      <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class = "btn btn-primary" value="Submit">
+      </form>
     </div>
   </body>
 </html>
+
+<!-- {% if users_info %}
+  <ol>
+    {% for user in users_info %}
+      <li>User Info
+        <ul>
+          <li>First Name: {{ user.first_name }}</li>
+          <li>Last Name: {{ user.last_name }}</li>
+          <li>Email: {{ user.email }}</li>
+        </ul>
+      </li>
+    {% endfor %}
+  </ol>
+{% else %}
+  <p>NO USER INFORMATION FOUND!</p>
+{% endif %} -->
