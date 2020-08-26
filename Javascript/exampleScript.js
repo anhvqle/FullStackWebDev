@@ -1,29 +1,29 @@
-// var play = prompt("Would you like to start the roster web app? y/n");
-// var roster = [];
-// var action = "empty"
-// if(play === 'y'){
-//   while(action !== 'quit'){
-//     action = prompt("Please select an action: add, remove, display, or quit.")
-//     if(action === 'add'){
-//       var name = prompt("What name would you like to add?")
-//       roster.push(name)
-//     }
-//     else if(action === 'display'){
-//       console.log(roster);
-//     }
-//     else if(action === 'remove'){
-//       var name = prompt("What name would you like to remove?")
-//       var index = roster.indexOf(name);
-//       roster.splice(index, 1);
-//     }
-//     else if (action === 'quit') {
-//       alert("Thanks for using the web app")
-//     }
-//     else {
-//       alert("Command not recognized")
-//     }
-//   }
-// }
+var play = prompt("Would you like to start the roster web app? y/n");
+var roster = [];
+var action = "empty"
+if(play === 'y'){
+  while(action !== 'quit'){
+    action = prompt("Please select an action: add, remove, display, or quit.")
+    if(action === 'add'){
+      var name = prompt("What name would you like to add?")
+      roster.push(name)
+    }
+    else if(action === 'display'){
+      console.log(roster);
+    }
+    else if(action === 'remove'){
+      var name = prompt("What name would you like to remove?")
+      var index = roster.indexOf(name);
+      roster.splice(index, 1);
+    }
+    else if (action === 'quit') {
+      alert("Thanks for using the web app")
+    }
+    else {
+      alert("Command not recognized")
+    }
+  }
+}
 // Part 6 - Objects Exercise
 
 ////////////////////

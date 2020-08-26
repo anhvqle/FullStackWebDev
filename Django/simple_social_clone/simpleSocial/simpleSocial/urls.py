@@ -1,4 +1,4 @@
-"""myBlog URL Configuration
+"""simpleSocial URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.auth import views as auth_view
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),
-    path('accounts/login', auth_view.LoginView.as_view(), name = 'LoginView'),
-    path('accounts/logout', auth_view.LogoutView.as_view(), name = 'LogoutView', kwargs = {'next_page' : '/'}),
+    path('', views.HomePage.as_view(), name = 'home'),
+    path('accounts/', include('accounts.urls', namespace = 'accounts')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('test/', views.TestPage.as_view(), name = 'test'),
+    path('thanks/', views.ThanksPage.as_view(), name = 'thanks'),
 ]
