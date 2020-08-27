@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django import template
 
 User = get_user_model()
-register - template.Library()
+register = template.Library()
 
 class Group(models.Model):
     name = models.CharField(max_length = 255, unique = True)
