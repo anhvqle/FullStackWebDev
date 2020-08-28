@@ -22,14 +22,14 @@
 
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
-            <li><a href="#">Post</a></li>
-            <li><a href="#">Groups</a></li>
-            <li><a href="#">Create Group</a></li>
-            <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+            <li><a href="{% url 'posts:create' %}" class="btn btn-simple">Post</a></li>
+            <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a></li>
+            <li><a href="{% url 'groups:create' %}" class="btn btn-simple">Create Group</a></li>
+            <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log Out</a></li>
           {% else %}
-            <li><a href="#">Groups</a></li>
-            <li><a href="{% url 'accounts:login' %}">Log In</a></li>
-            <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a></li>
+            <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log In</a></li>
+            <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign Up</a></li>
           {% endif %}
         </ul>
       </div>
@@ -40,6 +40,8 @@
 
       {% endblock %}
     </div>
-
   </body>
+  <script type="text/javascript" src="{% static 'simpleSocial/js/master.js' %}">
+
+  </script>
 </html>

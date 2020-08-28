@@ -1,4 +1,4 @@
-{% extend "groups/group_base.html" %}
+{% extends "groups/group_base.html" %}
 {% block pregroup %}
   <h1>{{ group.name }}</h1>
   <h2>Member Count: {{ group.members.count }}</h2>
